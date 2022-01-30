@@ -4,12 +4,12 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/presets/ERC20PresetMinterPauser.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import {IterableMap} from "../contracts/Libraries/IterableMap.sol";
+import {StakeMap} from "../contracts/Libraries/StakeMap.sol";
 
 contract MonopolyStaking is Ownable {
-    using IterableMap for IterableMap.Map;
+    using StakeMap for StakeMap.Map;
 
-    IterableMap.Map private map;
+    StakeMap.Map private map;
 
     ERC20PresetMinterPauser public immutable BWC;
     ERC20PresetMinterPauser public immutable Monopoly;

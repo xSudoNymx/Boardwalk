@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 pragma solidity ^0.8.0;
 
-import {IterableMap} from "../Libraries/IterableMap.sol";
+import {StakeMap} from "../Libraries/StakeMap.sol";
 
-contract TestIterableMap {
-    using IterableMap for IterableMap.Map;
+contract TestStakeMap {
+    using StakeMap for StakeMap.Map;
 
-    IterableMap.Map private map;
+    StakeMap.Map private map;
 
     function get(address _address) public view returns (uint256) {
         return map.get(_address);

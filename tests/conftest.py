@@ -1,10 +1,9 @@
-from turtle import st
 from brownie import (
     Monopoly,
     Boardwalk,
     MonopolyStaking,
-    IterableMap,
-    TestIterableMap,
+    StakeMap,
+    TestStakeMap,
     BoardwalkCapitalDAO,
 )
 from scripts.helper import get_account, get_accounts
@@ -23,7 +22,7 @@ def accounts():
 
 @pytest.fixture(autouse=True, scope="module")
 def Map(account):
-    IterableMap.deploy({"from": account})
+    StakeMap.deploy({"from": account})
 
 
 @pytest.fixture(scope="module")
@@ -55,8 +54,8 @@ def approve(account, BWCToken, MonopolyToken, stakeContract):
 
 
 @pytest.fixture(scope="module")
-def itrMap(account):
-    return TestIterableMap.deploy({"from": account})
+def TestStakeFixture(account):
+    return TestStakeMap.deploy({"from": account})
 
 
 @pytest.fixture(scope="module")
